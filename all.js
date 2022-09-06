@@ -56,9 +56,7 @@ for(let i=0 ; i<courseUnitList.length; i++){
 // }
 
 window.addEventListener('resize',function(){
-    if(window.innerWidth < 1200){
-        checkWindowState()
-    }
+    checkWindowState()
 })
 
 window.addEventListener('load',function(){
@@ -66,16 +64,18 @@ window.addEventListener('load',function(){
 })
 
 function checkWindowState(){
-    hamburgerBtn.classList.remove('active')
-    hamburgerBtn.classList.remove('fadeOut')
+    if(window.innerWidth < 1200){
+        hamburgerBtn.classList.remove('active')
+        hamburgerBtn.classList.remove('fadeOut')
 
-    courseContainer.classList.remove('active')
+        courseContainer.classList.remove('active')
 
-    if(hamburgerBtn.classList.contains('fadeIn')){
-        hamburgerBtnIcon.style.left = '130%'
-        hamburgerBtnIcon.style.opacity = 0
-    }else{
-        hamburgerBtnIcon.style.left = '50%'
-        hamburgerBtnIcon.style.opacity = 1
+        if(hamburgerBtn.classList.contains('fadeIn')){
+            hamburgerBtnIcon.style.left = '130%'
+            hamburgerBtnIcon.style.opacity = 0
+        }else{
+            hamburgerBtnIcon.style.left = '50%'
+            hamburgerBtnIcon.style.opacity = 1
+        }
     }
 }
