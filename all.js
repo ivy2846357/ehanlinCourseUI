@@ -67,6 +67,7 @@ function checkWindowState(){
     if(window.innerWidth < 1200){
         hamburgerBtn.classList.remove('active')
         hamburgerBtn.classList.remove('fadeOut')
+        hamburgerBtn.classList.add('fadeIn')
 
         courseContainer.classList.remove('active')
 
