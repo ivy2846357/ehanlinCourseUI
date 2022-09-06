@@ -1,0 +1,106 @@
+
+/* ------------------- 課程影片列表樣式（右） ------------------- */
+
+// container
+.course-videoList
+    width: $course-videoList-width
+    z-index: 50
+    position: fixed
+    top: 104.5px
+    bottom: 0
+    right: $course-videoList-width * -1
+    overflow-y: scroll
+    transition: all .5s
+
+    // 列表樣式
+    &-item
+        width: 100%
+        font-size: 16px
+        padding: 32px
+        cursor: pointer
+        display: flex
+        justify-content: space-between
+        border: none
+        outline: none
+
+        &.active
+
+            >.course-videoList-icon
+                transform: rotate(180deg)
+
+        // 單元名稱
+        &.course-unitName
+            background-color: $color-gray-600
+            color: $color-white
+            border-bottom: 1px solid $color-white
+
+            &:hover
+                background-color: $color-primary
+
+        // 子單元名稱
+        &.course-subunitName
+            background-color: $color-gray-500
+            color: $color-white
+            border-bottom: 1px solid $color-white
+
+            &:hover
+                background-color: $color-primary
+
+        // 單課程影片
+        &.course-videoName
+            background-color: $color-white
+            color: $color-gray-600
+            border-bottom: 1px solid $color-gray-300
+
+            &:hover
+                background-color: $color-primary
+                color: $color-white
+
+                >.course-videoList-time
+                    color: $color-white
+
+            &.active
+                background-color: $color-gray-100
+
+                &:hover
+                    background-color: $color-primary
+
+    // 左邊 icon 位置
+    &-icon
+        margin-right: 16px
+        margin-top: 4px
+        transition: .2s
+
+    // 右邊箭頭 icon 位置
+    &-arrow
+        margin-left: 32px
+
+    // 課程標題
+    &-title
+        display: flex
+        align-items: flex-start
+
+    // 課程時間
+    &-time
+        color: $color-gray-600
+            
+// 最上層課程資訊
+.course-videoInfo
+    padding: 24px
+    background-color: $color-gray-600
+    color: $color-white
+    border-bottom: 1px solid $color-white
+
+    &-title
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 12px
+
+.course-subunitList
+    height: 0
+    overflow: hidden
+    transition: all .5s
+
+    &.active
+        height: 100%

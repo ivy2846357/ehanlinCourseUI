@@ -1,0 +1,51 @@
+
+/* ------------------- 課程導覽列樣式 ------------------- */
+
+.course
+    
+    // 導覽列 container
+    &-navbar
+        width: 100%
+        display: flex
+        justify-content: space-between
+        position: fixed
+        top: 104.5px
+        left: 0
+        right: 0
+        background-color: $color-white
+        z-index: 10
+        transition: all .5s
+
+        // 選單按鈕並排
+        &-menu
+            display: flex
+            width: 100%
+            overflow-x: scroll
+
+        // 按鈕
+        &-btn
+            display: flex
+            padding: 24px 24px 28px 24px
+            color: $color-gray-500
+            position: relative
+            transition: all .2s
+
+            &:hover
+                color: $color-primary
+
+            // 目前位置設定
+            &.active
+                color: $color-primary
+
+                &::after
+                    content: ''
+                    width: 100%
+                    height: 4px
+                    background: $color-linear
+                    position: absolute
+                    bottom: 0
+                    left: 0
+
+        // icon 位置
+        &-icon
+            margin-right: 16px

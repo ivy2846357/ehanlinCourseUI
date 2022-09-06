@@ -1,0 +1,461 @@
+@charset "UTF-8";
+/* ------------------- 共用樣式設定 ------------------- */
+/* ------------------- 顏色樣式 ------------------- */
+/* ------------------- 字型大小 ------------------- */
+/* ------------------- 影片列表寬度 ------------------- */
+/* ------------------- 共用樣式設定 ------------------- */
+body {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style-type: none;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* ------------------- 元件設定 ------------------- */
+/* ------------------- 預設按鈕樣式 ------------------- */
+.btn, .coursePage-btn {
+  padding: 16px;
+  border-radius: 8px;
+}
+.btn-fill {
+  color: #fff;
+}
+.btn-fill-primary {
+  background-color: #0D6CBE;
+}
+.btn-fill-linear {
+  background: -webkit-gradient(linear, left top, right top, from(#3068CA), to(#04BEFE));
+  background: linear-gradient(to right, #3068CA, #04BEFE);
+}
+.btn-fill-notice {
+  background-color: #D6503D;
+}
+.btn-outline-primary {
+  border: 1px solid #0D6CBE;
+  color: #0D6CBE;
+}
+.btn-outline-white, .coursePage-btn {
+  border: 1px solid #fff;
+  color: #fff;
+}
+.btn-icon, .coursePage-btn-icon {
+  margin-right: 8px;
+}
+
+/* ------------------- 翰林導覽列元件（先自己寫，之後在改） ------------------- */
+.eh-navbar {
+  background: -webkit-gradient(linear, left top, right top, from(#3068CA), to(#04BEFE));
+  background: linear-gradient(to right, #3068CA, #04BEFE);
+  padding: 24px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.eh-navbar-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.eh-navbar-item {
+  margin-right: 32px;
+}
+.eh-navbar-item:last-child {
+  margin-right: 0;
+}
+.eh-navbar-message {
+  width: 40px;
+  height: 30px;
+}
+.eh-navbar-memberSetting {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #fff;
+  background-color: #C2C2C2;
+  border-radius: 50%;
+}
+.eh-navbar-memberSetting:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5);
+          box-shadow: rgba(0, 0, 0, 0.5);
+}
+
+.coursePage-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.coursePage-btn:hover {
+  background-color: #fff;
+  color: #0D6CBE;
+}
+.coursePage-btn-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ------------------- 課程導覽列樣式 ------------------- */
+.course-navbar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  top: 104.5px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 10;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.course-navbar-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+}
+.course-navbar-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 24px 24px 28px 24px;
+  color: #5B5B5B;
+  position: relative;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.course-navbar-btn:hover {
+  color: #0D6CBE;
+}
+.course-navbar-btn.active {
+  color: #0D6CBE;
+}
+.course-navbar-btn.active::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: -webkit-gradient(linear, left top, right top, from(#3068CA), to(#04BEFE));
+  background: linear-gradient(to right, #3068CA, #04BEFE);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.course-navbar-icon {
+  margin-right: 16px;
+}
+
+/* ------------------- 漢堡選單樣式 ------------------- */
+.course-hamburgerBtn {
+  background-color: #3F3F3F;
+  width: 75px;
+  height: 75px;
+  position: relative;
+}
+.course-hamburgerBtn-icon {
+  width: 32px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 130%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+}
+.course-hamburgerBtn::after, .course-hamburgerBtn::before {
+  content: "";
+  width: 32px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.course-hamburgerBtn::after {
+  top: 28px;
+}
+.course-hamburgerBtn::before {
+  bottom: 25px;
+}
+.course-hamburgerBtn.active::after {
+  top: 38px;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+}
+.course-hamburgerBtn.active::before {
+  bottom: 35px;
+  -webkit-transform: translateX(-50%) rotate(-45deg);
+          transform: translateX(-50%) rotate(-45deg);
+}
+.course-hamburgerBtn.fadeOut > .course-hamburgerBtn-icon {
+  -webkit-animation: hamburgerBtn-middleLine-fadeOut 0.3s linear both;
+          animation: hamburgerBtn-middleLine-fadeOut 0.3s linear both;
+}
+.course-hamburgerBtn.fadeIn > .course-hamburgerBtn-icon {
+  -webkit-animation: hamburgerBtn-middleLine-fadeIn 0.3s linear both;
+          animation: hamburgerBtn-middleLine-fadeIn 0.3s linear both;
+}
+
+/* ------------------- 漢堡選單動畫設定 ------------------- */
+@-webkit-keyframes hamburgerBtn-middleLine-fadeOut {
+  100% {
+    opacity: 0;
+    left: 130%;
+  }
+}
+@keyframes hamburgerBtn-middleLine-fadeOut {
+  100% {
+    opacity: 0;
+    left: 130%;
+  }
+}
+@-webkit-keyframes hamburgerBtn-middleLine-fadeIn {
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
+}
+@keyframes hamburgerBtn-middleLine-fadeIn {
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
+}
+/* ------------------- 版面設定 ------------------- */
+/* ------------------- 課程影片介面內容樣式（左） ------------------- */
+.course-video-content {
+  height: 100vh;
+  background-color: #EEEEEE;
+  position: relative;
+  top: 179px;
+  z-index: 5;
+}
+
+.course-video {
+  width: 100%;
+  height: 65vh;
+  background-color: #3F3F3F;
+}
+
+.course-info {
+  padding: 32px 24px;
+}
+.course-info-courseName {
+  font-size: 20px;
+  font-weight: bold;
+  color: #7D7D7D;
+  margin-bottom: 8px;
+}
+.course-info-courseTitle {
+  font-size: 32px;
+  font-weight: bold;
+  color: #3F3F3F;
+  margin-bottom: 8px;
+}
+.course-info-courseVideoName {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3F3F3F;
+}
+
+/* ------------------- 課程影片列表樣式（右） ------------------- */
+.course-videoList {
+  width: 500px;
+  z-index: 50;
+  position: fixed;
+  top: 104.5px;
+  bottom: 0;
+  right: -500px;
+  overflow-y: scroll;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.course-videoList-item {
+  width: 100%;
+  font-size: 16px;
+  padding: 32px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: none;
+  outline: none;
+}
+.course-videoList-item.active > .course-videoList-icon {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.course-videoList-item.course-unitName {
+  background-color: #3F3F3F;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+.course-videoList-item.course-unitName:hover {
+  background-color: #0D6CBE;
+}
+.course-videoList-item.course-subunitName {
+  background-color: #5B5B5B;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+.course-videoList-item.course-subunitName:hover {
+  background-color: #0D6CBE;
+}
+.course-videoList-item.course-videoName {
+  background-color: #fff;
+  color: #3F3F3F;
+  border-bottom: 1px solid #A4A4A4;
+}
+.course-videoList-item.course-videoName:hover {
+  background-color: #0D6CBE;
+  color: #fff;
+}
+.course-videoList-item.course-videoName:hover > .course-videoList-time {
+  color: #fff;
+}
+.course-videoList-item.course-videoName.active {
+  background-color: #EEEEEE;
+}
+.course-videoList-item.course-videoName.active:hover {
+  background-color: #0D6CBE;
+}
+.course-videoList-icon {
+  margin-right: 16px;
+  margin-top: 4px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.course-videoList-arrow {
+  margin-left: 32px;
+}
+.course-videoList-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.course-videoList-time {
+  color: #3F3F3F;
+}
+
+.course-videoInfo {
+  padding: 24px;
+  background-color: #3F3F3F;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+.course-videoInfo-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 12px;
+}
+
+.course-subunitList {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.course-subunitList.active {
+  height: 100%;
+}
+
+/* ------------------- 課程影片介面區塊大小設定 ------------------- */
+.course-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+.course-container.active > .course-videoList {
+  right: 0;
+}
+.course-container.active > .course-content {
+  width: calc(100% - 500px);
+}
+.course-container.active > .course-content > .course-navbar {
+  width: calc(100% - 500px);
+}
+
+.course-content {
+  width: 100%;
+  overflow-y: scroll;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}

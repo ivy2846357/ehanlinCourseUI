@@ -1,0 +1,67 @@
+
+/* ------------------- 漢堡選單樣式 ------------------- */
+
+.course-hamburgerBtn
+    background-color: $color-gray-600
+    width: 75px
+    height: 75px
+    position: relative
+
+    // 漢堡選單未收合狀態（三條線）
+    &-icon
+        width: 32px
+        height: 2px
+        background-color: $color-white
+        position: absolute
+        top: 50%
+        left: 130%
+        transform: translateX(-50%)
+        opacity: 0
+
+    &::after,
+    &::before
+        content: ''
+        width: 32px
+        height: 2px
+        background-color: $color-white
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        transition: all .3s
+
+    &::after
+        top: 28px
+
+    &::before
+        bottom: 25px
+
+    // 漢堡選單收合狀態（X）
+    &.active
+
+        &::after
+            top: 38px
+            transform: translateX(-50%) rotate(45deg)
+
+        &::before
+            bottom: 35px
+            transform: translateX(-50%) rotate(-45deg)
+
+    &.fadeOut
+        >.course-hamburgerBtn-icon
+            animation: hamburgerBtn-middleLine-fadeOut .3s linear both
+
+    &.fadeIn
+        >.course-hamburgerBtn-icon
+            animation: hamburgerBtn-middleLine-fadeIn .3s linear both
+
+/* ------------------- 漢堡選單動畫設定 ------------------- */
+
+@keyframes hamburgerBtn-middleLine-fadeOut
+    100%
+        opacity: 0
+        left: 130%
+
+@keyframes hamburgerBtn-middleLine-fadeIn
+    100%
+        opacity: 1
+        left: 50%

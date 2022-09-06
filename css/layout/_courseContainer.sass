@@ -1,0 +1,29 @@
+
+/* ------------------- 課程影片介面區塊大小設定 ------------------- */
+
+$course-videoList-width: 500px
+
+// 影片介面內容 container
+.course-container
+    display: flex
+    height: 100vh
+    overflow: hidden
+
+    // course-container 加上 active 後，影音列表會隱藏起來
+    &.active
+
+        >.course-videoList
+            right: 0
+
+        >.course-content
+            width: $course-content-width
+
+            >.course-navbar
+                width: $course-content-width
+            
+
+// 內容區塊-左（影片、影片標題）
+.course-content
+    width: 100%
+    overflow-y: scroll
+    transition: all .5s
