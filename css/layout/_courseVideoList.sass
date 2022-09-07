@@ -3,14 +3,20 @@
 
 // container
 .course-videoList
-    width: $course-videoList-width
-    z-index: 50
-    position: fixed
-    top: 104.5px
-    bottom: 0
-    right: $course-videoList-width * -1
     overflow-y: scroll
-    transition: all .5s
+    width: 100%
+    height: 100%
+
+    &-container
+        width: $course-videoList-width
+        height: 100%
+        z-index: 50
+        position: fixed
+        top: 104.5px
+        bottom: 0
+        right: $course-videoList-width * -1
+        transition: all .5s
+        background-color: $color-white
 
     // 列表樣式
     &-item

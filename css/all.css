@@ -3,6 +3,7 @@
 /* ------------------- 顏色樣式 ------------------- */
 /* ------------------- 字型大小 ------------------- */
 /* ------------------- 影片列表寬度 ------------------- */
+/* ------------------- 斷點設定 ------------------- */
 /* ------------------- 共用樣式設定 ------------------- */
 body {
   position: relative;
@@ -97,7 +98,7 @@ time, mark, audio, video {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 100;
 }
 .eh-navbar-menu {
   display: -webkit-box;
@@ -209,7 +210,8 @@ time, mark, audio, video {
   background-color: #3F3F3F;
   width: 75px;
   height: 75px;
-  position: relative;
+  position: absolute;
+  left: -75px;
 }
 .course-hamburgerBtn-icon {
   width: 32px;
@@ -323,15 +325,21 @@ time, mark, audio, video {
 
 /* ------------------- 課程影片列表樣式（右） ------------------- */
 .course-videoList {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+}
+.course-videoList-container {
   width: 500px;
+  height: 100%;
   z-index: 50;
   position: fixed;
   top: 104.5px;
   bottom: 0;
   right: -500px;
-  overflow-y: scroll;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  background-color: #fff;
 }
 .course-videoList-item {
   width: 100%;
@@ -443,14 +451,37 @@ time, mark, audio, video {
   height: 100vh;
   overflow: hidden;
 }
-.course-container.active > .course-videoList {
+.course-container.active > .course-videoList-container {
   right: 0;
 }
 .course-container.active > .course-content {
   width: calc(100% - 500px);
 }
+@media screen and (max-width: 1200px) {
+  .course-container.active > .course-content {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .course-container.active > .course-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+  }
+}
 .course-container.active > .course-content > .course-navbar {
   width: calc(100% - 500px);
+}
+@media screen and (max-width: 1200px) {
+  .course-container.active > .course-content > .course-navbar {
+    width: 100%;
+  }
 }
 
 .course-content {

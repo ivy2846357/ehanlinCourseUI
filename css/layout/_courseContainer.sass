@@ -12,14 +12,32 @@ $course-videoList-width: 500px
     // course-container 加上 active 後，影音列表會隱藏起來
     &.active
 
-        >.course-videoList
+        >.course-videoList-container
             right: 0
 
         >.course-content
             width: $course-content-width
 
+            +respond-to('notebook')
+                width: 100%
+                background-color: rgba(black, 0)
+                transition: all .3s
+
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background-color: rgba(black, .7)
+                    z-index: 50
+
             >.course-navbar
                 width: $course-content-width
+
+                +respond-to('notebook')
+                    width: 100%
             
 
 // 內容區塊-左（影片、影片標題）

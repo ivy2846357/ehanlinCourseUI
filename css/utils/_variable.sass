@@ -32,3 +32,31 @@ $header-fontSize-04: 20px
 
 $course-videoList-width: 500px
 $course-content-width: calc(100% - $course-videoList-width)
+
+/* ------------------- 斷點設定 ------------------- */
+
+$breakpoint-notebook: 1200px
+$breakpoint-pad: 992px
+$breakpoint-phone: 768px
+$breakpoint-sphone: 576px
+$breakpoint-smphone: 450px
+
+@mixin respond-to($breakponit)
+    @if($breakponit == 'notebook')
+        @media screen and (max-width: #{$breakpoint-notebook})
+            @content
+    @else if($breakponit == 'pad')
+        @media screen and (max-width: #{$breakpoint-pad})
+            @content
+    @else if($breakponit == 'phone')
+        @media screen and (max-width: #{$breakpoint-phone})
+            @content
+    @else if($breakponit == 'sphone')
+        @media screen and (max-width: #{$breakpoint-sphone})
+            @content
+    @else if($breakponit == 'smphone')
+        @media screen and (max-width: #{$breakpoint-smphone})
+            @content
+    @else if($breakponit == 'sephone')
+        @media screen and (max-width: #{$breakpoint-sephone})
+            @content
