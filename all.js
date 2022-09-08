@@ -57,6 +57,10 @@ for(let i=0 ; i<courseUnitList.length; i++){
 
 // 之後要設定不要讓他一改變視窗就觸發
 window.addEventListener('resize',function(){
+    // 如果列表示展開狀態，就不要觸發函式（checkWindowState）
+    if(courseContainer.classList.contains('active')){
+        return
+    }
     checkWindowState()
 })
 

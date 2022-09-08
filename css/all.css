@@ -460,12 +460,8 @@ time, mark, audio, video {
 @media screen and (max-width: 1200px) {
   .course-container.active > .course-content {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
   }
   .course-container.active > .course-content::before {
-    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -487,6 +483,12 @@ time, mark, audio, video {
 .course-content {
   width: 100%;
   overflow-y: scroll;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.course-content::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }

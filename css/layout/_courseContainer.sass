@@ -20,11 +20,8 @@ $course-videoList-width: 500px
 
             +respond-to('notebook')
                 width: 100%
-                background-color: rgba(black, 0)
-                transition: all .3s
 
                 &::before
-                    content: ''
                     position: absolute
                     top: 0
                     left: 0
@@ -45,3 +42,9 @@ $course-videoList-width: 500px
     width: 100%
     overflow-y: scroll
     transition: all .5s
+
+    // 展開導覽列時，黑色遮罩淡出
+    &::before
+        content: ''
+        background-color: rgba(black, 0)
+        transition: all .5s
